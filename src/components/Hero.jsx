@@ -31,7 +31,7 @@ export default function Hero() {
     >
       <div className="hero-content">
         <motion.p className="hero-eyebrow" variants={itemVariants}>
-          Essex Tech
+          // programmer portfolio
         </motion.p>
 
         <motion.h1 
@@ -45,8 +45,12 @@ export default function Hero() {
           className="hero-subtitle"
           variants={itemVariants}
         >
-          Programmer. Hardware Enthusiast. Sack of Yams.
+          Building clean interfaces, writing reliable code, and exploring hardware from the command line up.
         </motion.p>
+
+        <motion.pre className="hero-code" variants={itemVariants}>
+          <code>{`const stack = ['JavaScript', 'React', 'Networking'];\nconst focus = 'Minimal builds, maximal clarity.';`}</code>
+        </motion.pre>
       </div>
 
       <motion.div 

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Awards from './components/Awards'
+import GitHubActivity from './components/GitHubActivity'
 import './App.css'
 
 function App() {
@@ -10,12 +11,14 @@ function App() {
   const [gifOpacity, setGifOpacity] = useState(0)
   const heroRef = useRef(null)
   const awardsRef = useRef(null)
+  const activityRef = useRef(null)
 
   const handleNavClick = (section) => {
     setActiveSection(section)
     const refs = {
       hero: heroRef,
       awards: awardsRef,
+      activity: activityRef,
     }
     
     if (refs[section]?.current) {
@@ -28,6 +31,7 @@ function App() {
       const sections = [
         { name: 'hero', ref: heroRef },
         { name: 'awards', ref: awardsRef },
+        { name: 'activity', ref: activityRef },
       ]
 
       for (const { name, ref } of sections) {
@@ -60,6 +64,10 @@ function App() {
         
         <section ref={awardsRef} className="section-wrapper">
           <Awards />
+        </section>
+
+        <section ref={activityRef} className="section-wrapper">
+          <GitHubActivity />
         </section>
       </main>
 

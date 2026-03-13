@@ -2,7 +2,11 @@ import { motion } from 'framer-motion'
 import './Navigation.css'
 
 export default function Navigation({ activeSection, onNavigate }) {
-  const navItems = ['hero', 'awards']
+  const navItems = [
+    { id: 'hero', label: '<Hero />' },
+    { id: 'awards', label: '<Certs />' },
+    { id: 'activity', label: '<Activity />' },
+  ]
 
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -33,20 +37,20 @@ export default function Navigation({ activeSection, onNavigate }) {
           className="logo"
           variants={itemVariants}
         >
-          AA
+          aa.dev
         </motion.p>
         
         <motion.nav className="nav-links" variants={containerVariants}>
           {navItems.map((item) => (
             <motion.button
-              key={item}
-              className={`nav-link ${activeSection === item ? 'active' : ''}`}
-              onClick={() => onNavigate(item)}
+              key={item.id}
+              className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+              onClick={() => onNavigate(item.id)}
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {item.charAt(0).toUpperCase() + item.slice(1)}
+              {item.label}
             </motion.button>
           ))}
         </motion.nav>
