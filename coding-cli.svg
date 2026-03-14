@@ -1,0 +1,25 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#090E14"/>
+  <rect x="74" y="58" width="1052" height="559" rx="16" fill="#0D1622" stroke="#24435A" stroke-width="2"/>
+  <rect x="74" y="58" width="1052" height="44" rx="16" fill="#101E2D"/>
+  <circle cx="106" cy="80" r="7" fill="#79FFC9"/>
+  <circle cx="132" cy="80" r="7" fill="#6FA7FF"/>
+  <circle cx="158" cy="80" r="7" fill="#B8D5FF"/>
+  <text x="188" y="85" fill="#97B0C8" font-family="JetBrains Mono, monospace" font-size="16">terminal :: portfolio</text>
+
+  <text x="112" y="148" fill="#79FFC9" font-family="JetBrains Mono, monospace" font-size="22">aiden@dev:~$ npm run build</text>
+  <text x="112" y="184" fill="#D2E4F8" font-family="JetBrains Mono, monospace" font-size="19">vite v5.x building for production...</text>
+  <text x="112" y="220" fill="#8FB4D6" font-family="JetBrains Mono, monospace" font-size="19">✓ 329 modules transformed</text>
+  <text x="112" y="256" fill="#8FB4D6" font-family="JetBrains Mono, monospace" font-size="19">dist/index.html 0.53 kB │ gzip: 0.32 kB</text>
+  <text x="112" y="292" fill="#8FB4D6" font-family="JetBrains Mono, monospace" font-size="19">dist/assets/index.css 7.32 kB │ gzip: 2.23 kB</text>
+  <text x="112" y="328" fill="#8FB4D6" font-family="JetBrains Mono, monospace" font-size="19">dist/assets/index.js 247.30 kB │ gzip: 81.09 kB</text>
+  <text x="112" y="364" fill="#79FFC9" font-family="JetBrains Mono, monospace" font-size="19">✓ built in 1.61s</text>
+
+  <text x="112" y="428" fill="#79FFC9" font-family="JetBrains Mono, monospace" font-size="22">aiden@dev:~$ git commit -m "ship update"</text>
+  <text x="112" y="464" fill="#D2E4F8" font-family="JetBrains Mono, monospace" font-size="19">[main 2f9de1b] ship update</text>
+  <text x="112" y="500" fill="#8FB4D6" font-family="JetBrains Mono, monospace" font-size="19">5 files changed, 214 insertions(+), 16 deletions(-)</text>
+
+  <rect x="112" y="538" width="13" height="27" fill="#79FFC9">
+    <animate attributeName="opacity" values="1;0;1" dur="1.3s" repeatCount="indefinite"/>
+  </rect>
+</svg>
