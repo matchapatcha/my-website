@@ -51,28 +51,38 @@ export default function Awards() {
         </motion.h2>
 
         <div className="badges-section">
-          <motion.div className="badges-grid" variants={containerVariants}>
-            {badges.map((badge, i) => (
-              <motion.a
-                key={i}
-                href={badge.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="badge-card"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div className="badge-image">
-                  <img src={badge.image} alt={badge.title} />
-                </div>
-                <div className="badge-info">
-                  <h4>{badge.title}</h4>
-                  <p className="badge-org">{badge.organization}</p>
-                  <p className="badge-issued">Issued {badge.issued}</p>
-                </div>
-              </motion.a>
-            ))}
-          </motion.div>
+          <div className="certifications-layout">
+            <motion.div className="badges-grid" variants={containerVariants}>
+              {badges.map((badge, i) => (
+                <motion.a
+                  key={i}
+                  href={badge.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="badge-card"
+                  variants={itemVariants}
+                  whileHover={{ y: -8 }}
+                >
+                  <div className="badge-image">
+                    <img src={badge.image} alt={badge.title} />
+                  </div>
+                  <div className="badge-info">
+                    <h4>{badge.title}</h4>
+                    <p className="badge-org">{badge.organization}</p>
+                    <p className="badge-issued">Issued {badge.issued}</p>
+                  </div>
+                </motion.a>
+              ))}
+            </motion.div>
+
+            <motion.div className="certifications-gif" variants={itemVariants}>
+              <img
+                src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2t5OGhsbWhzejQ3N2FwcngyMDl0cTNmYW8yM25mNnE4ejFrMmQ4MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/D63HGAzG15LQrjBPRE/giphy.gif"
+                alt="Celebration GIF"
+                loading="lazy"
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
     </motion.section>

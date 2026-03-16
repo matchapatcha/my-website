@@ -48,38 +48,10 @@
   height: 18px;
 }
 
-.corner-gif {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 220px;
-  height: 124px;
-  z-index: 100;
-  pointer-events: none;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(121, 255, 201, 0.35);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
-}
-
-.corner-gif iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
 @media (max-width: 768px) {
   .site-footer {
     gap: 1.4rem;
     padding: 2.2rem 1rem;
-  }
-
-  .corner-gif {
-    width: 168px;
-    height: 96px;
-    right: 0.8rem;
-    bottom: 0.8rem;
   }
 }
 

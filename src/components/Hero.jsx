@@ -45,7 +45,7 @@ export default function Hero() {
           className="hero-subtitle"
           variants={itemVariants}
         >
-          Building clean interfaces, writing reliable code, and exploring hardware from the command line up.
+          Intelligent. Powerful. Sack of Yams.
         </motion.p>
 
         <motion.pre className="hero-code" variants={itemVariants}>

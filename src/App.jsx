@@ -3,14 +3,15 @@ import { motion } from 'framer-motion'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Awards from './components/Awards'
+import Gallery from './components/Gallery'
 import GitHubActivity from './components/GitHubActivity'
 import './App.css'
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero')
-  const [gifOpacity, setGifOpacity] = useState(0)
   const heroRef = useRef(null)
   const awardsRef = useRef(null)
+  const galleryRef = useRef(null)
   const activityRef = useRef(null)
 
   const handleNavClick = (section) => {
@@ -18,6 +19,7 @@ function App() {
     const refs = {
       hero: heroRef,
       awards: awardsRef,
+      gallery: galleryRef,
       activity: activityRef,
     }
     
@@ -31,6 +33,7 @@ function App() {
       const sections = [
         { name: 'hero', ref: heroRef },
         { name: 'awards', ref: awardsRef },
+        { name: 'gallery', ref: galleryRef },
         { name: 'activity', ref: activityRef },
       ]
 
@@ -42,11 +45,6 @@ function App() {
           }
         }
       }
-
-      const scrollY = window.scrollY
-      const vh = window.innerHeight
-      const opacity = Math.min(1, Math.max(0, (scrollY - vh * 0.3) / (vh * 0.4)))
-      setGifOpacity(opacity)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -66,6 +64,10 @@ function App() {
           <Awards />
         </section>
 
+        <section ref={galleryRef} className="section-wrapper">
+          <Gallery />
+        </section>
+
         <section ref={activityRef} className="section-wrapper">
           <GitHubActivity />
         </section>
@@ -82,17 +84,6 @@ function App() {
         </a>
       </footer>
 
-      <div
-        className="corner-gif"
-        style={{ opacity: gifOpacity, transition: 'opacity 0.3s ease' }}
-      >
-        <iframe
-          src="https://tenor.com/embed/27312164"
-          frameBorder="0"
-          allowFullScreen
-          title="ishowspeed hype"
-        />
-      </div>
     </motion.div>
   )
 }

@@ -5,6 +5,7 @@ export default function Navigation({ activeSection, onNavigate }) {
   const navItems = [
     { id: 'hero', label: '<Hero />' },
     { id: 'awards', label: '<Certs />' },
+    { id: 'gallery', label: '<Gallery />' },
     { id: 'activity', label: '<Activity />' },
   ]
 
