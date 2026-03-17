@@ -19,6 +19,11 @@ export default function Gallery() {
       caption: 'IShowSpeed',
       src: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnFyNGV6bzIyY3I4aGs4NTFsNm15bDhjcDFxeTYzc2lob3VxNXZwbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pciDrSmCu2w6eY6Njf/giphy.gif',
     },
+    {
+      title: 'Chud Gabriel',
+      caption: 'Chud Gabriel',
+      src: '/photos/IMG_0007.JPG',
+    },
   ]
 
   const containerVariants = {
