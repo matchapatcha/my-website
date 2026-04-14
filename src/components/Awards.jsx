@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import './Awards.css'
 
 export default function Awards() {
+  const fallbackBadgeImage = '/linux-penguin.svg'
+
   const badges = [
     {
       title: 'JavaScript Essentials 1',
@@ -78,7 +80,16 @@ export default function Awards() {
                   whileHover={{ y: -8 }}
                 >
                   <div className="badge-image">
-                    <img src={badge.image} alt={badge.title} />
+                    <img
+                      src={badge.image}
+                      alt={badge.title}
+                      loading="lazy"
+                      onError={(event) => {
+                        const img = event.currentTarget
+                        if (img.src.endsWith(fallbackBadgeImage)) return
+                        img.src = fallbackBadgeImage
+                      }}
+                    />
                   </div>
                   <div className="badge-info">
                     <h4>{badge.title}</h4>
