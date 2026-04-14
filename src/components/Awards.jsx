@@ -1,27 +1,7 @@
-import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './Awards.css'
 
 export default function Awards() {
-  useEffect(() => {
-    const existingScript = document.querySelector(
-      'script[src="//cdn.credly.com/assets/utilities/embed.js"], script[src="https://cdn.credly.com/assets/utilities/embed.js"]'
-    )
-
-    if (existingScript) {
-      return
-    }
-
-    const script = document.createElement('script')
-    script.src = '//cdn.credly.com/assets/utilities/embed.js'
-    script.async = true
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
   const badges = [
     {
       title: 'JavaScript Essentials 1',
@@ -36,6 +16,20 @@ export default function Awards() {
       issued: 'Dec 9, 2025',
       image: 'https://images.credly.com/images/5bdd6a39-3e03-4444-9510-ecff80c9ce79/image.png',
       url: 'https://www.credly.com/users/aiden-aydenjian',
+    },
+    {
+      title: 'Linux Unhatched',
+      organization: 'Cisco',
+      issued: 'Issued via Credly',
+      image: 'https://images.credly.com/images/f25ec9d4-c59d-49b9-944a-f160012e81cd/linkedin_thumb_image.png',
+      url: 'https://www.credly.com/badges/9f104a14-7782-4fe0-892e-7e17877bac85/public_url',
+    },
+    {
+      title: 'Operating Systems Basics',
+      organization: 'Cisco',
+      issued: 'Issued via Credly',
+      image: 'https://images.credly.com/images/dcdf1a3c-2594-4f4c-a33a-050b4bca58b5/linkedin_thumb_image.png',
+      url: 'https://www.credly.com/badges/4497e9f8-9ce0-4c81-965a-854f6632eb22/public_url',
     },
   ]
 
@@ -93,32 +87,6 @@ export default function Awards() {
                   </div>
                 </motion.a>
               ))}
-
-              <motion.div
-                className="badge-card credly-badge-card"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div
-                  data-iframe-width="150"
-                  data-iframe-height="270"
-                  data-share-badge-id="9f104a14-7782-4fe0-892e-7e17877bac85"
-                  data-share-badge-host="https://www.credly.com"
-                />
-              </motion.div>
-
-              <motion.div
-                className="badge-card credly-badge-card"
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-              >
-                <div
-                  data-iframe-width="150"
-                  data-iframe-height="270"
-                  data-share-badge-id="4497e9f8-9ce0-4c81-965a-854f6632eb22"
-                  data-share-badge-host="https://www.credly.com"
-                />
-              </motion.div>
             </motion.div>
 
             <motion.div className="certifications-gif" variants={itemVariants}>
