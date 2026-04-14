@@ -1,7 +1,25 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './Gallery.css'
 
 export default function Gallery() {
+  useEffect(() => {
+    const existingScript = document.querySelector('script[src="https://tenor.com/embed.js"]')
+    if (existingScript) return
+
+    const script = document.createElement('script')
+    script.src = 'https://tenor.com/embed.js'
+    script.async = true
+    script.type = 'text/javascript'
+    document.body.appendChild(script)
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [])
+
   // Add or replace photo objects here.
   const galleryPhotos = [
     {
@@ -17,7 +35,7 @@ export default function Gallery() {
     {
       title: 'IShowSpeed',
       caption: 'IShowSpeed',
-      src: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnFyNGV6bzIyY3I4aGs4NTFsNm15bDhjcDFxeTYzc2lob3VxNXZwbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pciDrSmCu2w6eY6Njf/giphy.gif',
+      tenorPostId: '11790467925100085893',
     },
     {
       title: 'Chud Gabriel',
@@ -71,7 +89,23 @@ export default function Gallery() {
               whileHover={{ y: -6 }}
             >
               <div className="gallery-image-wrap">
-                <img src={photo.src} alt={photo.title} loading="lazy" />
+                {photo.tenorPostId ? (
+                  <div
+                    className="tenor-gif-embed"
+                    data-postid={photo.tenorPostId}
+                    data-share-method="host"
+                    data-aspect-ratio="1"
+                    data-width="100%"
+                  >
+                    <a href="https://tenor.com/view/ishow-speed-twitch-emote-desert-gif-11790467925100085893">
+                      Ishow Speed Sticker
+                    </a>
+                    from{' '}
+                    <a href="https://tenor.com/search/ishow-stickers">Ishow Stickers</a>
+                  </div>
+                ) : (
+                  <img src={photo.src} alt={photo.title} loading="lazy" />
+                )}
               </div>
               <div className="gallery-meta">
                 <h3>{photo.title}</h3>

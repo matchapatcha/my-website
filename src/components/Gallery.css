@@ -52,9 +52,11 @@
 }
 
 .gallery-image-wrap {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  background: rgba(2, 5, 10, 0.85);
 }
 
 .gallery-image-wrap img {
@@ -68,6 +70,17 @@
 
 .gallery-card:hover .gallery-image-wrap img {
   transform: scale(1.08);
+}
+
+.gallery-image-wrap .tenor-gif-embed {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-image-wrap .tenor-gif-embed > div,
+.gallery-image-wrap .tenor-gif-embed iframe {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .gallery-meta {
@@ -94,5 +107,9 @@
 
   .gallery-note {
     margin-bottom: 1.4rem;
+  }
+
+  .gallery-image-wrap {
+    aspect-ratio: 1 / 1;
   }
 }
