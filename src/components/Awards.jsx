@@ -1,7 +1,27 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './Awards.css'
 
 export default function Awards() {
+  useEffect(() => {
+    const existingScript = document.querySelector(
+      'script[src="//cdn.credly.com/assets/utilities/embed.js"], script[src="https://cdn.credly.com/assets/utilities/embed.js"]'
+    )
+
+    if (existingScript) {
+      return
+    }
+
+    const script = document.createElement('script')
+    script.src = '//cdn.credly.com/assets/utilities/embed.js'
+    script.async = true
+    document.body.appendChild(script)
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
   const badges = [
     {
       title: 'JavaScript Essentials 1',
@@ -73,6 +93,32 @@ export default function Awards() {
                   </div>
                 </motion.a>
               ))}
+
+              <motion.div
+                className="badge-card credly-badge-card"
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div
+                  data-iframe-width="150"
+                  data-iframe-height="270"
+                  data-share-badge-id="9f104a14-7782-4fe0-892e-7e17877bac85"
+                  data-share-badge-host="https://www.credly.com"
+                />
+              </motion.div>
+
+              <motion.div
+                className="badge-card credly-badge-card"
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                <div
+                  data-iframe-width="150"
+                  data-iframe-height="270"
+                  data-share-badge-id="4497e9f8-9ce0-4c81-965a-854f6632eb22"
+                  data-share-badge-host="https://www.credly.com"
+                />
+              </motion.div>
             </motion.div>
 
             <motion.div className="certifications-gif" variants={itemVariants}>
